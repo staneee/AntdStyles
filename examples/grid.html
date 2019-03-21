@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .h40 {
+            height: 40px;
+        }
+
+        .h80 {
+            height: 80px;
+        }
+
+        .h100 {
+            height: 100px;
+        }
+
+        .h120 {
+            height: 120px;
+        }
+
+        .colorGray {
+            background: #f5f5f5;
+        }
+
+        .colorA {
+            background: rgba(0, 160, 233, .7);
+        }
+
+        .colorB {
+            background: #00a0e9;
+        }
+
+        .ant-row-flex>div,
+        .ant-row>div {
+            text-align: center;
+            border-radius: 0;
+            min-height: 30px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            color: #fff;
+            padding: 16px 0;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin:30px;">
+        <h3>基础栅格</h3>
+        <p>
+            从堆叠到水平排列。
+            使用单一的一组 ant-row 和 ant-col-x 栅格组件，就可以创建一个基本的栅格系统，
+            所有列（ant-col）必须放在 ant-row 内。
+        </p>
+        <div class="ant-row">
+            <div class="ant-col-12 h40 colorA">ant-col-12</div>
+            <div class="ant-col-12 h40 colorB">ant-col-12</div>
+        </div>
+
+        <br>
+        <div class="ant-row">
+            <div class="ant-col-8 h40 colorA">ant-col-8</div>
+            <div class="ant-col-8 h40 colorB">ant-col-8</div>
+            <div class="ant-col-8 h40 colorA">ant-col-8</div>
+        </div>
+
+        <br>
+        <div class="ant-row">
+            <div class="ant-col-6 h40 colorB">ant-col-6</div>
+            <div class="ant-col-6 h40 colorA">ant-col-6</div>
+            <div class="ant-col-6 h40 colorB">ant-col-6</div>
+            <div class="ant-col-6 h40 colorA">ant-col-6</div>
+        </div>
+        <br>
+        <hr>
+        <h3>区块间隔</h3>
+        <p> 栅格常常需要和间隔进行配合,我们推荐使用 (16+8n)px 作为栅格间隔。(n 是自然数) </p>
+
+        <div class="ant-row" style="margin-left: -8px; margin-right: -8px;">
+            <div class="ant-col-6 gutter-row " style="padding-left: 8px; padding-right: 8px;">
+                <div class="gutter-box h40 colorA">ant-col-6</div>
+            </div>
+            <div class="ant-col-6 gutter-row" style="padding-left: 8px; padding-right: 8px;">
+                <div class="gutter-box h40 colorB">ant-col-6</div>
+            </div>
+            <div class="ant-col-6 gutter-row" style="padding-left: 8px; padding-right: 8px;">
+                <div class="gutter-box h40 colorA">ant-col-6</div>
+            </div>
+            <div class="ant-col-6 gutter-row" style="padding-left: 8px; padding-right: 8px;">
+                <div class="gutter-box h40 colorB">ant-col-6</div>
+            </div>
+        </div>
+
+
+        <hr>
+        <h3>左右偏移</h3>
+        <p> 使用 ant-col-offset-x 可以将列向右侧偏。例如，ant-col-offset-4 将元素向右侧偏移了 4 个列（column）的宽度 </p>
+        <div class="ant-row colorGray">
+            <div class="ant-col-8  h40 colorA">ant-col-8</div>
+            <div class="ant-col-8 ant-col-offset-8  h40 colorB">ant-col-8</div>
+        </div>
+
+        <br>
+
+        <div class="ant-row colorGray">
+            <div class="ant-col-6 ant-col-offset-6  h40 colorB"> col-6 col-offset-6 </div>
+            <div class="ant-col-6 ant-col-offset-6  h40 colorB"> col-6 col-offset-6 </div>
+        </div>
+
+
+        <br>
+        <hr>
+        <h3>栅格排序</h3>
+        <p>列排序。 通过使用 ant-col-push-x 和 ant-col-pull-x 类就可以很容易的改变列（column）的顺序。 </p>
+        <div class="ant-row">
+            <div class="ant-col-18 ant-col-push-6  h40 colorA"> col-18 col-push-6 </div>
+            <div class="ant-col-6 ant-col-pull-18  h40 colorB"> col-6 col-pull-18 </div>
+        </div>
+
+
+
+        <br>
+        <hr>
+        <h3>Flex 布局</h3>
+        <p>
+            Flex 布局基础。
+            使用 ant-row-flex-x 定义 flex 布局，其子元素根据不同的值 start,center,end,space-between,space-around，
+            分别定义其在父节点里面的排版方式。
+        </p>
+
+        <h5>sub-element align left</h5>
+        <div class="ant-row-flex ant-row-flex-top ant-row-flex-start colorGray">
+            <div class="ant-col-4 h40 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+        </div>
+        <h5>sub-element align center</h5>
+        <div class="ant-row-flex ant-row-flex-top ant-row-flex-center colorGray">
+            <div class="ant-col-4 h40 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+        </div>
+        <h5>sub-element align right</h5>
+        <div class="ant-row-flex ant-row-flex-top ant-row-flex-end colorGray">
+            <div class="ant-col-4 h40 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+        </div>
+        <h5>sub-element monospaced arrangement</h5>
+        <div class="ant-row-flex ant-row-flex-top ant-row-flex-space-between colorGray">
+            <div class="ant-col-4 h40 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+        </div>
+        <h5>sub-element align full</h5>
+        <div class="ant-row-flex ant-row-flex-top ant-row-flex-space-around colorGray">
+            <div class="ant-col-4 h40 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+        </div>
+
+        <br>
+        <hr>
+        <h3>Flex 对齐</h3>
+        <p>Flex 子元素垂直对齐。</p>
+        <h5>Align Top</h5>
+        <div class="ant-row-flex ant-row-flex-top ant-row-flex-center colorGray">
+            <div class="ant-col-4 h100 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+            <div class="ant-col-4 h120 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h80 colorB"> ant-col-4 </div>
+        </div>
+        <h5>Align Center</h5>
+        <div class="ant-row-flex ant-row-flex-middle ant-row-flex-space-around colorGray">
+            <div class="ant-col-4 h100 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+            <div class="ant-col-4 h120 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h80 colorB"> ant-col-4 </div>
+        </div>
+        <h5>Align Bottom</h5>
+        <div class="ant-row-flex ant-row-flex-bottom ant-row-flex-space-between colorGray">
+            <div class="ant-col-4 h100 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h40 colorB"> ant-col-4 </div>
+            <div class="ant-col-4 h120 colorA"> ant-col-4 </div>
+            <div class="ant-col-4 h80 colorB"> ant-col-4 </div>
+        </div>
+
+        <br>
+        <hr>
+        <h3>Flex 排序</h3>
+        <p>通过 Flex 布局的 ant-col-order-x 来改变元素的排序。</p>
+        <div class="ant-row-flex ant-row-flex-top ant-row-flex-start olorGray">
+            <div class="ant-col-6 ant-col-order-4 colorA"> 4 ant-col-6 </div>
+            <div class="ant-col-6 ant-col-order-3 colorB"> 3 ant-col-6 </div>
+            <div class="ant-col-6 ant-col-order-2 colorA"> 2 ant-col-6 </div>
+            <div class="ant-col-6 ant-col-order-1 colorB"> 1 ant-col-6 </div>
+        </div>
+
+        <br>
+        <hr>
+        <h3>响应式布局</h3>
+        <p>参照 Bootstrap 的 响应式设计，预设五个响应尺寸：xs、sm、md、lg、xl、xxl。</p>
+        <div class="ant-row">
+            <div class="ant-col-xs-2 ant-col-sm-4 ant-col-md-6 ant-col-lg-8 ant-col-xl-10 colorA"> ant-col </div>
+            <div class="ant-col-xs-20 ant-col-sm-16 ant-col-md-12 ant-col-lg-8 ant-col-xl-4 colorB">ant-col </div>
+            <div class="ant-col-xs-2 ant-col-sm-4 ant-col-md-6 ant-col-lg-8 ant-col-xl-10 colorA"> ant-col </div>
+        </div>
+        <br>
+
+        <hr>
+        <h3>其他属性的响应式</h3>
+        <p>
+            span、pull、push、offset、order 可以通过
+            ant-col-xs-span-x\ant-col-xs-pull-x 等实现响应式布局
+        </p>
+        <div class="ant-row">
+            <div class="ant-col-xs-5 ant-col-xs-offset-1 ant-col-lg-6 ant-col-lg-offset-2 colorA"> ant-col </div>
+            <div class="ant-col-xs-11 ant-col-xs-offset-1 ant-col-lg-6 ant-col-lg-offset-2 colorB">ant-col </div>
+            <div class="ant-col-xs-5 ant-col-xs-offset-1 ant-col-lg-6 ant-col-lg-offset-2 colorA"> ant-col </div>
+        </div>
+
+    </div>
+
+    <link rel="stylesheet" type="text/css" href="../dist/index.min.css" />
+    <link rel="stylesheet" type="text/css" href="../plugs/font-awesome/css/font-awesome.css" />
+    <style>
+
+    </style>
+</body>
+
+</html>
